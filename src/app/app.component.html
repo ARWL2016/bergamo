@@ -1,30 +1,10 @@
+<p>
+  This is Bergamo
+</p>
 
 <div>
-  <nav class="navbar navbar-default">
-    <div class="container">
-      <a class="navbar-brand"><b>votogo </b></a>
-
-        <ul class="nav navbar-nav">
-          <li><a [routerLink]="['/home']">TOPIC INDEX</a></li>
-          <li *ngIf="username"><a [routerLink]="['/home', username]">MY TOPICS</a></li>
-          <li *ngIf="username"><a [routerLink]="['/create']">NEW TOPIC</a></li>
-          <li><a [routerLink]="['/about']">ABOUT</a></li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="!username"><a [routerLink]="['/login/register']">SIGN UP</a></li>
-        <li *ngIf="!username"><a [routerLink]="['/login']">LOGIN</a></li>
-        <li *ngIf="username"><a>Logged in as <b>{{ username | uppercase }}</b></a></li>
-        <button *ngIf="username" class="btn btn-default navbar-btn" (click)="logout()">LOGOUT</button>
-      </ul>
-
-    </div>
-  </nav>
+  <router-outlet></router-outlet>
 </div>
-
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
 
 
 

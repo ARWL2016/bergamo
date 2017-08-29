@@ -6,7 +6,6 @@ import 'rxjs/add/operator/do';
 
 import { IUser } from 'app/models/user';
 import { HelperService } from "./helper.service";
-import { DataService } from "app/services/data.service";
 
 @Injectable()
 
@@ -14,7 +13,7 @@ export class AuthService {
   currentUser: IUser;
 
   constructor(
-    private _http: Http, 
+    private _http: Http,
     private _helper: HelperService
     ) {}
 
@@ -22,7 +21,7 @@ export class AuthService {
     const url = `/api/auth/register`;
     return this._http.post(url, user)
       .do (response => {
-        const token = this._helper.getAuthTokenFromHeader(response); 
+        const token = this._helper.getAuthTokenFromHeader(response);
         window.localStorage.setItem('token', token);
       })
       .map(response => response.json())
@@ -34,7 +33,7 @@ export class AuthService {
     const url = `/api/auth/login`;
     return this._http.post(url, user)
       .do(response => {
-        const token = this._helper.getAuthTokenFromHeader(response); 
+        const token = this._helper.getAuthTokenFromHeader(response);
         window.localStorage.setItem('token', token);
       })
       .map(response => response.json())
@@ -43,7 +42,7 @@ export class AuthService {
   }
 
   logout(): Promise<void> {
-    const options = this._helper.addAuthTokenToHeader(); 
+    const options = this._helper.addAuthTokenToHeader();
     const url = `/api/auth/logout`;
 
     return this._http.delete(url, options)

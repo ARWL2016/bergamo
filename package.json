@@ -15,8 +15,6 @@
     "build:prod": "ng build --no-aot --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "seed": "node api/data/index",
     "deploy": "git push heroku",
     "postdeploy": "heroku open"
   },
@@ -34,7 +32,6 @@
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
     "chalk": "^1.1.3",
-    "chart.js": "^2.6.0",
     "compression": "^1.6.2",
     "core-js": "^2.4.1",
     "express": "^4.15.3",

@@ -17,7 +17,6 @@ mongoose.connection.on('error', (err) => {
 
 module.exports = {
   mongoose,
-  VotingTopic,
   User
 }
 
